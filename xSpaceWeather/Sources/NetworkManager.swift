@@ -54,13 +54,31 @@ class NetworkService : ObservableObject
   
   // ---------------------------------------
   // https://stackoverflow.com/questions/38165291/mac-swift-how-do-i-download-an-image-and-load-it-into-a-nsimageview
-  func getImage(imageURL: String, imageCaption: String, imageNote: String) {
-    image = NSImage(byReferencing:NSURL(string: imageURL)! as URL)
-    caption = imageCaption
-    note = imageNote
-    //let imageView = NSImageView()
-    //imageView.image = image
-    //return image
+//  func getImage(imageURL: String, imageCaption: String, imageNote: String) {
+//    image = NSImage(byReferencing:NSURL(string: imageURL)! as URL)
+//    caption = imageCaption
+//    note = imageNote
+//    //let imageView = NSImageView()
+//    //imageView.image = image
+//    //return image
+//  }
+  
+  func retrieveImage(imageURL: String, imageCaption: String, imageNote: String) {
+    // Create URL
+       let url = URL(string: imageURL)!
+
+       DispatchQueue.global().async {
+           // Fetch Image Data
+           if let data = try? Data(contentsOf: url) {
+            DispatchQueue.main.async { [self] in
+                   // Create Image and Update Image View
+                   //self.imageView.image = UIImage(data: data)
+              image = NSImage(data: data)!
+                caption = imageCaption
+                note = imageNote
+               }
+           }
+       }
   }
 
 } // end class
