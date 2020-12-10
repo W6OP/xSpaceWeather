@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -11,6 +11,9 @@
 		991203812570387A0097E93F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 991203802570387A0097E93F /* ContentView.swift */; };
 		991203832570387A0097E93F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 991203822570387A0097E93F /* Assets.xcassets */; };
 		991203862570387A0097E93F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 991203852570387A0097E93F /* Preview Assets.xcassets */; };
+		999120A2257E924B001C2B3E /* ButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999120A1257E924B001C2B3E /* ButtonView.swift */; };
+		999120A5257E9523001C2B3E /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999120A4257E9523001C2B3E /* NetworkManager.swift */; };
+		99F3DD892582814200A115AA /* ImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99F3DD882582814200A115AA /* ImageView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,6 +24,9 @@
 		991203852570387A0097E93F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		991203872570387A0097E93F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		991203882570387A0097E93F /* xSpaceWeather.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = xSpaceWeather.entitlements; sourceTree = "<group>"; };
+		999120A1257E924B001C2B3E /* ButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonView.swift; sourceTree = "<group>"; };
+		999120A4257E9523001C2B3E /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		99F3DD882582814200A115AA /* ImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,8 +59,9 @@
 		9912037D2570387A0097E93F /* xSpaceWeather */ = {
 			isa = PBXGroup;
 			children = (
+				9912038F257038850097E93F /* Sources */,
+				99F3DD862582810900A115AA /* Views */,
 				9912037E2570387A0097E93F /* xSpaceWeatherApp.swift */,
-				991203802570387A0097E93F /* ContentView.swift */,
 				991203822570387A0097E93F /* Assets.xcassets */,
 				991203872570387A0097E93F /* Info.plist */,
 				991203882570387A0097E93F /* xSpaceWeather.entitlements */,
@@ -69,6 +76,24 @@
 				991203852570387A0097E93F /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		9912038F257038850097E93F /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				999120A4257E9523001C2B3E /* NetworkManager.swift */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		99F3DD862582810900A115AA /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				991203802570387A0097E93F /* ContentView.swift */,
+				999120A1257E924B001C2B3E /* ButtonView.swift */,
+				99F3DD882582814200A115AA /* ImageView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -106,7 +131,7 @@
 				};
 			};
 			buildConfigurationList = 991203762570387A0097E93F /* Build configuration list for PBXProject "xSpaceWeather" */;
-			compatibilityVersion = "Xcode 9.3";
+			compatibilityVersion = "Xcode 12.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -140,8 +165,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				99F3DD892582814200A115AA /* ImageView.swift in Sources */,
+				999120A5257E9523001C2B3E /* NetworkManager.swift in Sources */,
 				991203812570387A0097E93F /* ContentView.swift in Sources */,
 				9912037F2570387A0097E93F /* xSpaceWeatherApp.swift in Sources */,
+				999120A2257E924B001C2B3E /* ButtonView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
