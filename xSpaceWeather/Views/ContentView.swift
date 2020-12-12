@@ -15,7 +15,8 @@ struct ContentView: View {
         HStack {
           
           ButtonView().environmentObject(self.networkService)
-
+          Spacer()
+          
           ImageView().environmentObject(self.networkService)
 
           }  // outer HStack

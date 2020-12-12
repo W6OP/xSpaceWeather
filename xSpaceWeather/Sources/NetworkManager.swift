@@ -10,41 +10,10 @@ import Cocoa
 
 class NetworkService : ObservableObject
 {
-//    lazy var configuration: URLSessionConfiguration = URLSessionConfiguration.default
-//    lazy var session: URLSession = URLSession(configuration: self.configuration)
-//
-//    let url: NSURL
-  
-    @Published var image = NSImage()
-    @Published var caption = ""
-    @Published var note = ""
-  
-//    init(url: NSURL)
-//    {
-//        self.url = url
-//    }
-//
-//    func downloadImage(completion: @escaping ((NSData) -> Void))
-//    {
-//        let request = NSURLRequest(url: self.url as URL)
-//        let dataTask = session.dataTask(with: request as URLRequest) { (data, response, error) in
-//            if error == nil {
-//                if let httpResponse = response as? HTTPURLResponse {
-//                    switch (httpResponse.statusCode) {
-//                    case 200:
-//                        if let data = data {
-//                            completion(data as NSData)
-//                        }
-//                    default:
-//                        print(httpResponse.statusCode)
-//                    }
-//                }
-//            } else {
-//              print("Error download data: \(String(describing: error?.localizedDescription))")
-//            }
-//        }
-//        dataTask.resume()
-//    }
+  @Published var image = NSImage()
+  @Published var caption = ""
+  @Published var note = ""
+  @Published var loading = false
   
   // http://www.lu9da.org/prop_graph/imagen1.8.jpg
   // http://www.hamqsl.com/solar101vhf.php
@@ -53,34 +22,35 @@ class NetworkService : ObservableObject
   // http://www.hamqsl.com/solargraph.php
   
   // ---------------------------------------
-  // https://stackoverflow.com/questions/38165291/mac-swift-how-do-i-download-an-image-and-load-it-into-a-nsimageview
-//  func getImage(imageURL: String, imageCaption: String, imageNote: String) {
-//    image = NSImage(byReferencing:NSURL(string: imageURL)! as URL)
-//    caption = imageCaption
-//    note = imageNote
-//    //let imageView = NSImageView()
-//    //imageView.image = image
-//    //return image
-//  }
   
+  // LOOK AT:
+  // GitHub
+  // SDWebImageSwiftUI is a SwiftUI image loading framework, which based on SDWebImage.
+  
+  // https://cocoacasts.com/fm-3-download-an-image-from-a-url-in-swift
   func retrieveImage(imageURL: String, imageCaption: String, imageNote: String) {
-    // Create URL
-       let url = URL(string: imageURL)!
-
-       DispatchQueue.global().async {
-           // Fetch Image Data
-           if let data = try? Data(contentsOf: url) {
-            DispatchQueue.main.async { [self] in
-                   // Create Image and Update Image View
-                   //self.imageView.image = UIImage(data: data)
-              image = NSImage(data: data)!
-                caption = imageCaption
-                note = imageNote
-               }
-           }
-       }
+    
+    let url = URL(string: imageURL)!
+    
+    image = NSImage()
+    caption = ""
+    note = ""
+    loading = true
+    
+    DispatchQueue.global().async {
+      // Fetch Image Data
+      if let data = try? Data(contentsOf: url) {
+        DispatchQueue.main.async { [self] in
+          // Create Image and Update Image View
+          image = NSImage(data: data)!
+          caption = imageCaption
+          note = imageNote
+          loading = false
+        }
+      }
+    }
   }
-
+  
 } // end class
 
 // https://stackoverflow.com/questions/41562152/swift-3-download-jpeg-image-and-save-to-file-macos

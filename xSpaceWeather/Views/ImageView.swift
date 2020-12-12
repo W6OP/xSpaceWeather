@@ -21,16 +21,20 @@ struct ImageView: View {
         
         Text(networkService.note)
           .font(.body)
-          
+
+        if !networkService.loading {
         Image(nsImage: networkService.image)
           .resizable()
           .scaledToFit()
           .frame(width: 600.0, height: 600.0, alignment: .center)
-          //.aspectRatio(contentMode: .fit)
-        //  .clipShape(Circle())
+        } else {
+        ProgressView()
+          .scaleEffect(1.5, anchor: .center)
+          .progressViewStyle(CircularProgressViewStyle(tint: .blue))
+          .foregroundColor(.blue)
+        }
       }
       .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, maxHeight: .infinity)
-      //.border(Color.purple)
     }
 }
 
