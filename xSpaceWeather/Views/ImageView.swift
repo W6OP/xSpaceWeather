@@ -11,9 +11,9 @@ import SwiftUI
 struct ImageView: View {
   @EnvironmentObject var networkService: NetworkService
   
-    var body: some View {
-      VStack {
-        // could add Text for a caption - published property in NetworkService
+  var body: some View {
+    VStack {
+      if !networkService.loading {
         Text(networkService.caption)
           .font(.largeTitle)
         
@@ -21,27 +21,27 @@ struct ImageView: View {
         
         Text(networkService.note)
           .font(.body)
-
-        if !networkService.loading {
+        
+        //if !networkService.loading {
         Image(nsImage: networkService.image)
           .resizable()
           .scaledToFit()
           .frame(width: 600.0, height: 600.0, alignment: .center)
-        } else {
+      } else {
         ProgressView()
           .scaleEffect(1.5, anchor: .center)
           .progressViewStyle(CircularProgressViewStyle(tint: .blue))
           .foregroundColor(.blue)
-        }
       }
-      .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, maxHeight: .infinity)
     }
+    .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, maxHeight: .infinity)
+  }
 }
 
 struct ImageView_Previews: PreviewProvider {
-    static var previews: some View {
-      ImageView().environmentObject(NetworkService())
-    }
+  static var previews: some View {
+    ImageView().environmentObject(NetworkService())
+  }
 }
 
 

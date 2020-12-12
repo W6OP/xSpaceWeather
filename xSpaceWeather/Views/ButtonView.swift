@@ -38,6 +38,14 @@ struct ButtonView: View {
         .selectButton()
         
         Button(action: {
+          self.networkService.retrieveImage(imageURL: Endpoint.button8Address, imageCaption: Endpoint.button8Caption, imageNote: Endpoint.button8Comment)
+        }) {
+            Text(Endpoint.button8Text)//.padding(.horizontal, 10)
+              .frame(minWidth: buttonWidth, maxWidth: buttonWidth)
+        }
+        .selectButton()
+        
+        Button(action: {
           self.networkService.retrieveImage(imageURL: Endpoint.button4Address, imageCaption: Endpoint.button4Caption, imageNote: Endpoint.button4Comment)
         }) {
             Text(Endpoint.button4Text)
@@ -61,13 +69,31 @@ struct ButtonView: View {
         }
         .selectButton()
         
+        
         Button(action: {
-          self.networkService.retrieveImage(imageURL: Endpoint.button7Address, imageCaption: Endpoint.button7Caption, imageNote: Endpoint.button7Comment)
+          self.networkService.retrieveImage(imageURL: Endpoint.button9Address, imageCaption: Endpoint.button9Caption, imageNote: Endpoint.button9Comment)
         }) {
-          Text(Endpoint.button7Text)
+          Text(Endpoint.button9Text)
             .frame(minWidth: buttonWidth, maxWidth: buttonWidth)
         }
         .selectButton()
+        
+        Button(action: {
+          self.networkService.retrieveImage(imageURL: Endpoint.button10Address, imageCaption: Endpoint.button10Caption, imageNote: Endpoint.button10Comment)
+        }) {
+          Text(Endpoint.button10Text)
+            .frame(minWidth: buttonWidth, maxWidth: buttonWidth)
+        }
+        .selectButton()
+        
+        
+//        Button(action: {
+//          self.networkService.retrieveImage(imageURL: Endpoint.button7Address, imageCaption: Endpoint.button7Caption, imageNote: Endpoint.button7Comment)
+//        }) {
+//          Text(Endpoint.button7Text)
+//            .frame(minWidth: buttonWidth, maxWidth: buttonWidth)
+//        }
+//        .selectButton()
 
       } // left VStack
     .frame(minWidth: 130, maxWidth: 130, maxHeight: .infinity)
@@ -90,15 +116,15 @@ private struct Endpoint {
    static let button1Comment = ""
    static let button1Text = "Space Weather"
   
-  static let button2Address = "https://services.swpc.noaa.gov/images/planetary-k-index.gif"
-  static let button2Caption = "Planetary K-Index"
+  static let button2Address = "https://services.swpc.noaa.gov/images/station-k-index.png"
+  static let button2Caption = "Station K-Index"
   static let button2Comment = ""
-  static let button2Text = "K-Index"
+  static let button2Text = "Station K Index"
   
-  static let button3Address = "https://www.lu9da.org/prop_graph/imagen1.8.jpg"
-  static let button3Caption = ""
+  static let button3Address = "https://services.swpc.noaa.gov/images/station-a-index.png"
+  static let button3Caption = "Station A Index"
   static let button3Comment = ""
-  static let button3Text = "Other"
+  static let button3Text = "Station A Index"
   
   static let button4Address = "https://services.swpc.noaa.gov/images/animations/enlil/latest.jpg"
   static let button4Caption = "(CME) Solar Wind Prediction Model"
@@ -111,15 +137,30 @@ private struct Endpoint {
   static let button5Comment = ""
   static let button5Text = "Ionospheric Map"
   
-  static let button6Address = "https://www.hamqsl.com/solarsystem.php"
-  static let button6Caption = "Other"
+  static let button6Address = "https://sohowww.nascom.nasa.gov/data/synoptic/sunspots_earth/mdi_sunspots.jpg"
+  static let button6Caption = "Sun Spots"
   static let button6Comment = ""
-  static let button6Text = "Other"
+  static let button6Text = "Sun Spots"
   
-  static let button7Address = "https://www.hamqsl.com/solargraph.php"
+  static let button7Address = "https://sohowww.nascom.nasa.gov/data/LATEST/current_eit_195.gif"
   static let button7Caption = "other"
   static let button7Comment = ""
   static let button7Text = "Other"
+  
+  static let button8Address = "https://services.swpc.noaa.gov/images/planetary-k-index.gif"
+  static let button8Caption = "Planetary K Index"
+  static let button8Comment = ""
+  static let button8Text = "Planetry K Index"
+  
+  static let button9Address = "https://sohowww.nascom.nasa.gov/data/realtime/hmi_igr/512/latest.jpg"
+  static let button9Caption = "SDO/HMI Continuum Image"
+  static let button9Comment = ""
+  static let button9Text = "SDO/HMI Continuum"
+  
+  static let button10Address = "https://sohowww.nascom.nasa.gov/data/realtime/hmi_mag/512/latest.jpg"
+  static let button10Caption = "SDO HMI Magnetogram Image"
+  static let button10Comment = ""
+  static let button10Text = "SDO/HMI Magnetogram"
  }
 
 // http://www.lu9da.org/prop_graph/imagen1.8.jpg
@@ -129,3 +170,4 @@ private struct Endpoint {
 // http://www.hamqsl.com/solargraph.php
 
 // http://services.swpc.noaa.gov/images/animations/enlil/latest.jpg
+// https://services.swpc.noaa.gov/images/planetary-k-index.gif
