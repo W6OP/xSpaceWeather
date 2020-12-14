@@ -9,7 +9,6 @@ import SwiftUI
 
 
 struct ImageView: View {
-  //@EnvironmentObject var networkService: NetworkService
   @StateObject var networkService: NetworkService
   
   var body: some View {
@@ -19,11 +18,11 @@ struct ImageView: View {
           .font(.largeTitle)
         
         Divider()
+          .frame(maxWidth: 500)
         
         Text(networkService.note)
           .font(.body)
         
-        //if !networkService.loading {
         Image(nsImage: networkService.image)
           .resizable()
           .scaledToFit()
@@ -41,7 +40,7 @@ struct ImageView: View {
 
 struct ImageView_Previews: PreviewProvider {
   static var previews: some View {
-    ImageView(networkService: NetworkService())//.environmentObject(NetworkService())
+    ImageView(networkService: NetworkService())
   }
 }
 

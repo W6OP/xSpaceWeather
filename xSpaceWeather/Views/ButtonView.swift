@@ -8,9 +8,8 @@
 import SwiftUI
 
 struct ButtonView: View {
-  //@EnvironmentObject
+
   @StateObject var networkService: NetworkService
-  //@ObservedObject var networkService = NetworkService()
   let buttonWidth = CGFloat(110)
   
     var body: some View {
@@ -99,14 +98,14 @@ struct ButtonView: View {
 
       } // left VStack
     .frame(minWidth: 130, maxWidth: 130, maxHeight: .infinity)
-    .border(Color.red)
-
+      //.border(Color.gray)
+      Divider()
     } // end body
 }
 
 struct ButtonView_Previews: PreviewProvider {
     static var previews: some View {
-      ButtonView(networkService: NetworkService())//.environmentObject(NetworkService())
+      ButtonView(networkService: NetworkService())
     }
 }
 
