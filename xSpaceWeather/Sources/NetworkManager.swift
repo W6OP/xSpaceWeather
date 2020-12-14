@@ -25,7 +25,7 @@ class NetworkService : ObservableObject
   
   // LOOK AT:
   // GitHub
-  // SDWebImageSwiftUI is a SwiftUI image loading framework, which based on SDWebImage.
+  // SDWebImageSwiftUI is a SwiftUI image loading framework, which is based on SDWebImage.
   
   // https://cocoacasts.com/fm-3-download-an-image-from-a-url-in-swift
   func retrieveImage(imageURL: String, imageCaption: String, imageNote: String) {

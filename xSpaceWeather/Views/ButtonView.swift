@@ -96,9 +96,8 @@ struct ButtonView: View {
 //        }
 //        .selectButton()
 
-      } // left VStack
+      }// left VStack
     .frame(minWidth: 130, maxWidth: 130, maxHeight: .infinity)
-      //.border(Color.gray)
       Divider()
     } // end body
 }

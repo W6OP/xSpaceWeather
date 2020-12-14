@@ -19,11 +19,10 @@ struct ContentView: View {
           
           ImageView(networkService: networkService)
 
-          }  // outer HStack
+          }// outer HStack
       }
       .frame(minWidth: 800, maxWidth: 800, minHeight: 700, maxHeight: 700)
-      //.border(Color.green)
-    } // outer container VStack
+    }// outer container VStack
 }
 
 struct ContentView_Previews: PreviewProvider {
@@ -31,9 +30,3 @@ struct ContentView_Previews: PreviewProvider {
         ContentView()
     }
 }
-
-// Image(uiImage: UIImage(named: "yourImage")!)
-
-// Image("yourImage")//
-// .resizable()
-// .scaledToFit()

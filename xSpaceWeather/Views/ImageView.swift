@@ -7,7 +7,6 @@
 
 import SwiftUI
 
-
 struct ImageView: View {
   @StateObject var networkService: NetworkService
   
