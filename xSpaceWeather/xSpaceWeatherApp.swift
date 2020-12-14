@@ -32,14 +32,14 @@ struct xSpaceWeatherApp: App {
   var body: some Scene {
     WindowGroup {
       //ContentView()
-      ContentView().environmentObject(NetworkService())
+      ContentView()//.environmentObject(NetworkService())
     }
     
-    //      For instance, the one given below creates a Preference Menu scene for the macOS platform.
-    //      #if(MacOS)
-    //        Settings {
-    //          ContentView()
-    //        }
-    //      #endif
+          //For instance, the one given below creates a Preference Menu scene for the macOS platform.
+//          #if(MacOS)
+//            Settings {
+//              ContentView()
+//            }
+//          #endif
   }
 }

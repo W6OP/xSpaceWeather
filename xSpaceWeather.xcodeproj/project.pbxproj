@@ -123,6 +123,8 @@
 			dependencies = (
 			);
 			name = xSpaceWeather;
+			packageProductDependencies = (
+			);
 			productName = xSpaceWeather;
 			productReference = 9912037B2570387A0097E93F /* xSpaceWeather.app */;
 			productType = "com.apple.product-type.application";
@@ -150,6 +152,8 @@
 				Base,
 			);
 			mainGroup = 991203722570387A0097E93F;
+			packageReferences = (
+			);
 			productRefGroup = 9912037C2570387A0097E93F /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -311,6 +315,7 @@
 				CODE_SIGN_ENTITLEMENTS = xSpaceWeather/xSpaceWeather.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_ASSET_PATHS = "\"xSpaceWeather/Preview Content\"";
 				DEVELOPMENT_TEAM = JE278GX57V;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -335,6 +340,7 @@
 				CODE_SIGN_ENTITLEMENTS = xSpaceWeather/xSpaceWeather.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_ASSET_PATHS = "\"xSpaceWeather/Preview Content\"";
 				DEVELOPMENT_TEAM = JE278GX57V;
 				ENABLE_HARDENED_RUNTIME = YES;

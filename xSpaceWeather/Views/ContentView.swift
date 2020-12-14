@@ -8,16 +8,17 @@
 import SwiftUI
 
 struct ContentView: View {
-  @EnvironmentObject var networkService: NetworkService
+  //@EnvironmentObject var networkService: NetworkService
+  @StateObject var networkService = NetworkService()
   
     var body: some View {
       VStack {
         HStack {
           
-          ButtonView().environmentObject(self.networkService)
+          ButtonView(networkService: networkService)//.environmentObject(self.networkService)
           Spacer()
           
-          ImageView().environmentObject(self.networkService)
+          ImageView(networkService: networkService)//.environmentObject(self.networkService)
 
           }  // outer HStack
       }
@@ -28,7 +29,7 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView().environmentObject(NetworkService())
+        ContentView()//.environmentObject(NetworkService())
     }
 }
 

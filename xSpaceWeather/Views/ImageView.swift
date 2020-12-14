@@ -9,7 +9,8 @@ import SwiftUI
 
 
 struct ImageView: View {
-  @EnvironmentObject var networkService: NetworkService
+  //@EnvironmentObject var networkService: NetworkService
+  @StateObject var networkService: NetworkService
   
   var body: some View {
     VStack {
@@ -40,7 +41,7 @@ struct ImageView: View {
 
 struct ImageView_Previews: PreviewProvider {
   static var previews: some View {
-    ImageView().environmentObject(NetworkService())
+    ImageView(networkService: NetworkService())//.environmentObject(NetworkService())
   }
 }
 
