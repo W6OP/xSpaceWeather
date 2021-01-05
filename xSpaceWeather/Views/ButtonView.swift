@@ -98,6 +98,7 @@ import SwiftUI
 //    }
 //}
 
+/// Model of an endpoint
 struct EnpointIdentifier : Identifiable {
   var id: Int
   
@@ -107,6 +108,7 @@ struct EnpointIdentifier : Identifiable {
   var buttonText: String
 }
 
+/// Array of endpoints for dynamic buttons
 let endpointData = [
   EnpointIdentifier(id: 1, buttonAddress: "https://services.swpc.noaa.gov/images/swx-overview-small.gif", buttonCaption: "Space Weather", buttonComment: "", buttonText: "Space Weather"),
   
