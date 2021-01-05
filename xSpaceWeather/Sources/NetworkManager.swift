@@ -13,7 +13,7 @@ class NetworkService : ObservableObject
   @Published var image = NSImage()
   @Published var caption = ""
   @Published var note = ""
-  @Published var loading = false
+  @Published var imageIsLoading = false
   
   // http://www.lu9da.org/prop_graph/imagen1.8.jpg
   // http://www.hamqsl.com/solar101vhf.php
@@ -28,6 +28,8 @@ class NetworkService : ObservableObject
   // SDWebImageSwiftUI is a SwiftUI image loading framework, which is based on SDWebImage.
   
   // https://cocoacasts.com/fm-3-download-an-image-from-a-url-in-swift
+  
+  /// Downloads an image from an URL and updates a published field.
   func retrieveImage(imageURL: String, imageCaption: String, imageNote: String) {
     
     let url = URL(string: imageURL)!
@@ -35,7 +37,7 @@ class NetworkService : ObservableObject
     image = NSImage()
     caption = ""
     note = ""
-    loading = true
+    imageIsLoading = true
     
     DispatchQueue.global().async {
       // Fetch Image Data
@@ -45,7 +47,7 @@ class NetworkService : ObservableObject
           image = NSImage(data: data)!
           caption = imageCaption
           note = imageNote
-          loading = false
+          imageIsLoading = false
         }
       }
     }

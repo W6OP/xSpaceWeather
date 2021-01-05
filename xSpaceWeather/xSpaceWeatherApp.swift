@@ -31,7 +31,7 @@ struct xSpaceWeatherApp: App {
   }
   var body: some Scene {
     WindowGroup {
-      ContentView()
+      ContentView(endpoints: endpointData)
     }
     
           //For instance, the one given below creates a Preference Menu scene for the macOS platform.

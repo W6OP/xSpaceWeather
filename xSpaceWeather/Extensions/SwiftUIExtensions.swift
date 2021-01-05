@@ -9,6 +9,25 @@ import Foundation
 import SwiftUI
 
 /**
+Custom text template for the button text style.
+Sets the same frame size for multiple buttons in a stack.
+*/
+
+struct PrestyledText: ViewModifier {
+    let textWidth = CGFloat(110)
+    func body(content: Content) -> some View {
+        content
+          .frame(minWidth: textWidth, maxWidth: textWidth)
+    }
+}
+
+extension View {
+    var prestyledText: some View {
+        self.modifier(PrestyledText())
+    }
+}
+
+/**
  Custom button template for the default button style.
  */
 struct DefaultButtonStyle: ButtonStyle {
@@ -75,6 +94,7 @@ struct CWButtonStyle: ButtonStyle {
       .cornerRadius(5)
   }
 }
+
 /**
  Extension to apply custom button styles.
  */

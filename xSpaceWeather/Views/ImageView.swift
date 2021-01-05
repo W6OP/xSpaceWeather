@@ -12,7 +12,7 @@ struct ImageView: View {
   
   var body: some View {
     VStack {
-      if !networkService.loading {
+      if !networkService.imageIsLoading {
         Text(networkService.caption)
           .font(.largeTitle)
         
