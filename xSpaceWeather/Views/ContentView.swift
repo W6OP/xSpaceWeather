@@ -13,9 +13,11 @@ struct ContentView: View {
   
   var body: some View {
     VStack {
-      HStack {
-        //replacement for ButtonView(networkService: networkService)
+      HStack(alignment: .top) {
         VStack {
+          Spacer()
+            .frame(maxHeight:10)
+          // build buttons
           ForEach(endpoints) { endpoint in
             Button(action: {
               self.networkService.retrieveImage(imageURL: endpoint.buttonAddress, imageCaption: endpoint.buttonCaption, imageNote: endpoint.buttonComment)
@@ -24,13 +26,19 @@ struct ContentView: View {
                 .prestyledText
             }
             .selectButton()
+            .touchBar {
+              Button(action: {
+                self.networkService.retrieveImage(imageURL: endpoint.buttonAddress, imageCaption: endpoint.buttonCaption, imageNote: endpoint.buttonComment)
+              }) {
+                Text(endpoint.buttonText)
+              }
+            }
           }
         }  // VStack
         .padding()
+        
         Divider()
-        
-        Spacer()
-        
+       
         ImageView(networkService: networkService)
         
       }// HStack
