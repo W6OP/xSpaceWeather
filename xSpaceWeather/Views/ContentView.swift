@@ -26,6 +26,7 @@ struct ContentView: View {
                 .prestyledText
             }
             .selectButton()
+            .focusable()
             .touchBar {
               Button(action: {
                 self.networkService.retrieveImage(imageURL: endpoint.buttonAddress, imageCaption: endpoint.buttonCaption, imageNote: endpoint.buttonComment)
@@ -33,7 +34,7 @@ struct ContentView: View {
                 Text(endpoint.buttonText)
               }
             }
-          }
+          } // end foreach
         }  // VStack
         .padding()
         
