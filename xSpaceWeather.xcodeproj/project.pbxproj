@@ -11,6 +11,7 @@
 		991203812570387A0097E93F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 991203802570387A0097E93F /* ContentView.swift */; };
 		991203832570387A0097E93F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 991203822570387A0097E93F /* Assets.xcassets */; };
 		991203862570387A0097E93F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 991203852570387A0097E93F /* Preview Assets.xcassets */; };
+		99261C3325A8C21400ED67DE /* TouchBarButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99261C3225A8C21400ED67DE /* TouchBarButtons.swift */; };
 		999120A2257E924B001C2B3E /* ButtonModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999120A1257E924B001C2B3E /* ButtonModel.swift */; };
 		999120A5257E9523001C2B3E /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999120A4257E9523001C2B3E /* NetworkManager.swift */; };
 		99F1B6132585324600D983CC /* SwiftUIExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99F1B6122585324600D983CC /* SwiftUIExtensions.swift */; };
@@ -25,6 +26,7 @@
 		991203852570387A0097E93F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		991203872570387A0097E93F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		991203882570387A0097E93F /* xSpaceWeather.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = xSpaceWeather.entitlements; sourceTree = "<group>"; };
+		99261C3225A8C21400ED67DE /* TouchBarButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TouchBarButtons.swift; sourceTree = "<group>"; };
 		999120A1257E924B001C2B3E /* ButtonModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonModel.swift; sourceTree = "<group>"; };
 		999120A4257E9523001C2B3E /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		99F1B6122585324600D983CC /* SwiftUIExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIExtensions.swift; sourceTree = "<group>"; };
@@ -103,6 +105,7 @@
 				991203802570387A0097E93F /* ContentView.swift */,
 				99F3DD882582814200A115AA /* ImageView.swift */,
 				999120A1257E924B001C2B3E /* ButtonModel.swift */,
+				99261C3225A8C21400ED67DE /* TouchBarButtons.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -181,6 +184,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				99F3DD892582814200A115AA /* ImageView.swift in Sources */,
+				99261C3325A8C21400ED67DE /* TouchBarButtons.swift in Sources */,
 				999120A5257E9523001C2B3E /* NetworkManager.swift in Sources */,
 				991203812570387A0097E93F /* ContentView.swift in Sources */,
 				99F1B6132585324600D983CC /* SwiftUIExtensions.swift in Sources */,

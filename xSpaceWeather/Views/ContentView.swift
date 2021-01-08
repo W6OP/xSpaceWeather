@@ -38,6 +38,8 @@ struct ContentView: View {
         }  // VStack
         .padding()
         
+        TouchBarButtons()
+        
         Divider()
        
         ImageView(networkService: networkService)
