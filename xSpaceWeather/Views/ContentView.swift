@@ -14,31 +14,30 @@ struct ContentView: View {
   var body: some View {
     VStack {
       HStack(alignment: .top) {
-        VStack {
-          Spacer()
-            .frame(maxHeight:10)
+        GroupBox {
           // build buttons
           ForEach(endpoints) { endpoint in
             Button(action: {
               self.networkService.retrieveImage(imageURL: endpoint.buttonAddress, imageCaption: endpoint.buttonCaption, imageNote: endpoint.buttonComment)
-            }) {
+            })
+            {
               Text(endpoint.buttonText)
                 .prestyledText
             }
             .selectButton()
-            .focusable()
-            .touchBar {
-              Button(action: {
-                self.networkService.retrieveImage(imageURL: endpoint.buttonAddress, imageCaption: endpoint.buttonCaption, imageNote: endpoint.buttonComment)
-              }) {
-                Text(endpoint.buttonText)
-              }
-            }
+//            .focusable()
+//            .touchBar {
+//              Button(endpoint.buttonText, action: {
+//                self.networkService.retrieveImage(imageURL: endpoint.buttonAddress, imageCaption: endpoint.buttonCaption, imageNote: endpoint.buttonComment)
+//              })
+//            }
           } // end foreach
-        }  // VStack
+        }
         .padding()
         
-        TouchBarButtons()
+        GroupBox {
+          TouchBarButtons()
+        }
         
         Divider()
        

@@ -9,24 +9,20 @@ import SwiftUI
 
 struct TouchBarButtons: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Text("Button 1")
           .focusable()
           .touchBar {
-            Button(action: {
+            Button("button 1", action: {
               print("button 1")
-            }) {
-              Text("button 1")
-            }
+            })
           }
       
-      Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+      Text("Button 2")
         .focusable()
         .touchBar {
-          Button(action: {
-            print("button 1")
-          }) {
-            Text("button 1")
-          }
+          Button("button 2", action: {
+            print("button 2")
+          }) 
         }
     }
 }
