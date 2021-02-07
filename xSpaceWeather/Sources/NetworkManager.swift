@@ -8,51 +8,74 @@
 import Foundation
 import Cocoa
 
-class NetworkService : ObservableObject
-{
+class NetworkService: ObservableObject {
   @Published var image = NSImage()
   @Published var caption = ""
   @Published var note = ""
   @Published var imageIsLoading = false
-  
+
   // http://www.lu9da.org/prop_graph/imagen1.8.jpg
   // http://www.hamqsl.com/solar101vhf.php
   // http://www.hamqsl.com/solar101sc.php
   // http://www.hamqsl.com/solarsystem.php
   // http://www.hamqsl.com/solargraph.php
-  
+
   // ---------------------------------------
-  
+
   // LOOK AT:
   // GitHub
   // SDWebImageSwiftUI is a SwiftUI image loading framework, which is based on SDWebImage.
-  
+
   // https://cocoacasts.com/fm-3-download-an-image-from-a-url-in-swift
-  
+
   /// Downloads an image from an URL and updates a published field.
   func retrieveImage(imageURL: String, imageCaption: String, imageNote: String) {
-    
-    let url = URL(string: imageURL)!
-    
+
+    guard let url = URL(string: imageURL) else {
+      print("invalid url")
+      return
+    }
+
     image = NSImage()
     caption = ""
     note = ""
     imageIsLoading = true
-    
-    DispatchQueue.global().async {
+
+    DispatchQueue.global().async { [self] in
       // Fetch Image Data
-      if let data = try? Data(contentsOf: url) {
-        DispatchQueue.main.async { [self] in
-          // Create Image and Update Image View
-          image = NSImage(data: data)!
-          caption = imageCaption
-          note = imageNote
-          imageIsLoading = false
+      let contents: Data?
+      do {
+          contents = try Data(contentsOf: url)
+          DispatchQueue.main.async { [self] in
+            // Create Image and Update Image View
+            image = NSImage(data: contents!)!
+            caption = imageCaption
+            note = imageNote
+            imageIsLoading = false
         }
+      } catch {
+          contents = nil
+          DispatchQueue.main.async { [self] in
+            imageIsLoading = false
+          }
       }
+
+//      if let data = try? Data(contentsOf: url) {
+//        DispatchQueue.main.async { [self] in
+//          // Create Image and Update Image View
+//          image = NSImage(data: data)!
+//          caption = imageCaption
+//          note = imageNote
+//          imageIsLoading = false
+//        }
+//      }
+//    }
+//    DispatchQueue.main.async { [self] in
+//      imageIsLoading = false
     }
+//    return
   }
-  
+
 } // end class
 
 // https://stackoverflow.com/questions/41562152/swift-3-download-jpeg-image-and-save-to-file-macos

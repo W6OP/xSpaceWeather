@@ -34,7 +34,7 @@ struct DefaultButtonStyle: ButtonStyle {
   var foregroundColor: Color
   var backgroundColor: Color
   var pressedColor: Color
-  
+
   func makeBody(configuration: Self.Configuration) -> some View {
     configuration.label
       .padding(2)
@@ -51,7 +51,7 @@ struct SelectButtonStyle: ButtonStyle {
   var foregroundColor: Color
   var backgroundColor: Color
   var pressedColor: Color
-  
+
   func makeBody(configuration: Self.Configuration) -> some View {
     configuration.label
       .padding(2)
@@ -68,7 +68,7 @@ struct ControlButtonStyle: ButtonStyle {
   var foregroundColor: Color
   var backgroundColor: Color
   var pressedColor: Color
-  
+
   func makeBody(configuration: Self.Configuration) -> some View {
     configuration.label
       .padding(5)
@@ -85,7 +85,7 @@ struct CWButtonStyle: ButtonStyle {
   var foregroundColor: Color
   var backgroundColor: Color
   var pressedColor: Color
-  
+
   func makeBody(configuration: Self.Configuration) -> some View {
     configuration.label
       .padding(2)
@@ -112,7 +112,7 @@ extension View {
       )
     )
   }
-  
+
   func memoryButton(
     foregroundColor: Color = .black,
     backgroundColor: Color = .blue,
@@ -126,7 +126,7 @@ extension View {
       )
     )
   }
-  
+
   func selectButton(
     foregroundColor: Color = .black,
     backgroundColor: Color = .green,
@@ -140,7 +140,7 @@ extension View {
       )
     )
   }
-  
+
   func defaultButton(
     foregroundColor: Color = .black,
     backgroundColor: Color = .blue,
@@ -154,7 +154,7 @@ extension View {
       )
     )
   }
-  
+
   func cwButton(
     foregroundColor: Color = .black,
     backgroundColor: Color = .blue,

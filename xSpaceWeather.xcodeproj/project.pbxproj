@@ -7,10 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		9912037F2570387A0097E93F /* xSpaceWeatherApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9912037E2570387A0097E93F /* xSpaceWeatherApp.swift */; };
+		9912037F2570387A0097E93F /* XSpaceWeatherApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9912037E2570387A0097E93F /* XSpaceWeatherApp.swift */; };
 		991203812570387A0097E93F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 991203802570387A0097E93F /* ContentView.swift */; };
 		991203832570387A0097E93F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 991203822570387A0097E93F /* Assets.xcassets */; };
 		991203862570387A0097E93F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 991203852570387A0097E93F /* Preview Assets.xcassets */; };
+		99173AF525D04B0300FA3461 /* SwiftLintFramework in Frameworks */ = {isa = PBXBuildFile; productRef = 99173AF425D04B0300FA3461 /* SwiftLintFramework */; };
 		99261C3325A8C21400ED67DE /* TouchBarButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99261C3225A8C21400ED67DE /* TouchBarButtons.swift */; };
 		999120A2257E924B001C2B3E /* ButtonModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999120A1257E924B001C2B3E /* ButtonModel.swift */; };
 		999120A5257E9523001C2B3E /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999120A4257E9523001C2B3E /* NetworkManager.swift */; };
@@ -20,7 +21,7 @@
 
 /* Begin PBXFileReference section */
 		9912037B2570387A0097E93F /* xSpaceWeather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = xSpaceWeather.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		9912037E2570387A0097E93F /* xSpaceWeatherApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = xSpaceWeatherApp.swift; sourceTree = "<group>"; };
+		9912037E2570387A0097E93F /* XSpaceWeatherApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XSpaceWeatherApp.swift; sourceTree = "<group>"; };
 		991203802570387A0097E93F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		991203822570387A0097E93F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		991203852570387A0097E93F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -38,6 +39,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				99173AF525D04B0300FA3461 /* SwiftLintFramework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -66,7 +68,7 @@
 				99F1B6112585322A00D983CC /* Extensions */,
 				9912038F257038850097E93F /* Sources */,
 				99F3DD862582810900A115AA /* Views */,
-				9912037E2570387A0097E93F /* xSpaceWeatherApp.swift */,
+				9912037E2570387A0097E93F /* XSpaceWeatherApp.swift */,
 				991203822570387A0097E93F /* Assets.xcassets */,
 				991203872570387A0097E93F /* Info.plist */,
 				991203882570387A0097E93F /* xSpaceWeather.entitlements */,
@@ -120,6 +122,7 @@
 				991203772570387A0097E93F /* Sources */,
 				991203782570387A0097E93F /* Frameworks */,
 				991203792570387A0097E93F /* Resources */,
+				99173AF725D0503A00FA3461 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -127,6 +130,7 @@
 			);
 			name = xSpaceWeather;
 			packageProductDependencies = (
+				99173AF425D04B0300FA3461 /* SwiftLintFramework */,
 			);
 			productName = xSpaceWeather;
 			productReference = 9912037B2570387A0097E93F /* xSpaceWeather.app */;
@@ -156,6 +160,7 @@
 			);
 			mainGroup = 991203722570387A0097E93F;
 			packageReferences = (
+				99173AF325D04B0300FA3461 /* XCRemoteSwiftPackageReference "SwiftLint" */,
 			);
 			productRefGroup = 9912037C2570387A0097E93F /* Products */;
 			projectDirPath = "";
@@ -178,6 +183,26 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		99173AF725D0503A00FA3461 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nif which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		991203772570387A0097E93F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -188,7 +213,7 @@
 				999120A5257E9523001C2B3E /* NetworkManager.swift in Sources */,
 				991203812570387A0097E93F /* ContentView.swift in Sources */,
 				99F1B6132585324600D983CC /* SwiftUIExtensions.swift in Sources */,
-				9912037F2570387A0097E93F /* xSpaceWeatherApp.swift in Sources */,
+				9912037F2570387A0097E93F /* XSpaceWeatherApp.swift in Sources */,
 				999120A2257E924B001C2B3E /* ButtonModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -385,6 +410,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		99173AF325D04B0300FA3461 /* XCRemoteSwiftPackageReference "SwiftLint" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/SwiftLint.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.42.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		99173AF425D04B0300FA3461 /* SwiftLintFramework */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 99173AF325D04B0300FA3461 /* XCRemoteSwiftPackageReference "SwiftLint" */;
+			productName = SwiftLintFramework;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 991203732570387A0097E93F /* Project object */;
 }

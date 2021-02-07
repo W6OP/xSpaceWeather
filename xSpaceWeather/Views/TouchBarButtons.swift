@@ -16,13 +16,13 @@ struct TouchBarButtons: View {
               print("button 1")
             })
           }
-      
+
       Text("Button 2")
         .focusable()
         .touchBar {
           Button("button 2", action: {
             print("button 2")
-          }) 
+          })
         }
     }
 }

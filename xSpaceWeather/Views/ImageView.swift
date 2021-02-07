@@ -9,19 +9,19 @@ import SwiftUI
 
 struct ImageView: View {
   @StateObject var networkService: NetworkService
-  
+
   var body: some View {
     VStack {
       if !networkService.imageIsLoading {
         Text(networkService.caption)
           .font(.largeTitle)
-        
+
         Divider()
           .frame(maxWidth: 500)
-        
+
         Text(networkService.note)
           .font(.body)
-        
+
         Image(nsImage: networkService.image)
           .resizable()
           .scaledToFit()
@@ -33,7 +33,9 @@ struct ImageView: View {
           .foregroundColor(.blue)
       }
     }
+    // swiftlint:disable colon
     .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, maxHeight: .infinity)
+    // swiftlint:enable colon
   }
 }
 
@@ -42,7 +44,6 @@ struct ImageView_Previews: PreviewProvider {
     ImageView(networkService: NetworkService())
   }
 }
-
 
 // https://www.swpc.noaa.gov/products/wsa-enlil-solar-wind-prediction
 // solar wind data to be animated
